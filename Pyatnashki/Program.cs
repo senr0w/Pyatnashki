@@ -1,4 +1,5 @@
 
+
 using System;
 using System.ComponentModel;
 
@@ -48,12 +49,7 @@ while (!gameOver)
         if (!win)
             break;
     }  
-    if (win)
-    {
-        Console.WriteLine("WINNER!!!");
-        gameOver = true;
-        break;
-    }
+    
 
     int a = 0; Console.WriteLine("Выберите число для заменки");
     int b = Convert.ToInt32(Console.ReadLine());
@@ -83,5 +79,10 @@ while (!gameOver)
     {
         Console.WriteLine("Так нельзя");
     }
-
+    if (win)
+        {
+            Console.WriteLine("WINNER!!!");
+            gameOver = true;
+            break;
+        }
 }
