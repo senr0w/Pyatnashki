@@ -1,16 +1,39 @@
-﻿using System;
-int[,] board = new int[4, 4]
-{
-    {1,2,3,4},
-    {5,6,7,8},
-    {9,10,11,12},
-    {13,14,15,0}
-};
-int k= board.GetLength(0);
-int h= board.GetLength(1);
+using System;
 
- 
-while(true) { 
+int[,] board = new int[4, 4];
+int[] numbers = new int[16];
+
+for (int i = 0; i < 15; i++)
+{
+    numbers[i] = i + 1;
+}
+
+
+Shuffle(numbers);
+
+int index = 0;
+for (int i = 0; i < board.GetLength(0); i++)
+{
+    for (int j = 0; j < board.GetLength(1); j++)
+    {
+        board[i, j] = numbers[index++];
+    }
+}
+
+
+
+void Shuffle(int[] array)
+{
+    Random rand = new Random();
+    for (int i = array.Length - 1; i > 0; i--)
+    {
+        int j = rand.Next(0, i + 1);
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+}
+while () { 
    Random rand= new Random();
 for(int i = 0; i < board.GetLength(0); i++)
 {
@@ -21,15 +44,18 @@ for(int i = 0; i < board.GetLength(0); i++)
     Console.WriteLine();
 }
 
-
     int a = 0;
 
-Console.WriteLine("Ввведите второе число для замены:");
-int b = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Введите второе число для замены:");
+    int b = Convert.ToInt32(Console.ReadLine());
 
-bebra(board, a, b);
+    bebra(board, a, b);
 
     Console.WriteLine("\nПродолжаем");
+}
+void CheckWin(int[,] board)
+{
+
 }
 void bebra(int[,] board, int hog,int sergey) 
 {
