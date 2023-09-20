@@ -1,83 +1,87 @@
+
 using System;
+using System.ComponentModel;
 
-int[,] board = new int[4, 4];
-int[] numbers = new int[16];
-
-for (int i = 0; i < 15; i++)
+int[,] nums = new int[4, 4]{
+    {1,2,3,4},    
+    {5,6,7,8},
+    {9,10,11,12},    
+    {13,14,15,0}
+};
+int w = nums.GetLength(0); int h = nums.GetLength(1);
+Random rand = new Random();
+bool gameOver = false;
+for (int i = w * h - 1; i > 0; i--)
 {
-    numbers[i] = i + 1;
+    int line = i / w; int tab = i % h;
+    int line2 = rand.Next(0, w);
+    int tab2 = rand.Next(0, h);
+    int temp = nums[line, tab]; nums[line, tab] = nums[line2, tab2];
+    nums[line2, tab2] = temp;
 }
 
-
-Shuffle(numbers);
-
-int index = 0;
-for (int i = 0; i < board.GetLength(0); i++)
+while (!gameOver)
 {
-    for (int j = 0; j < board.GetLength(1); j++)
+    Console.Clear();
+    for (int i = 0; i < nums.GetLength(0); i++)
     {
-        board[i, j] = numbers[index++];
-    }
-}
-
-
-
-void Shuffle(int[] array)
-{
-    Random rand = new Random();
-    for (int i = array.Length - 1; i > 0; i--)
-    {
-        int j = rand.Next(0, i + 1);
-        int temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-    }
-}
-while () { 
-   Random rand= new Random();
-for(int i = 0; i < board.GetLength(0); i++)
-{
-    for (int j = 0; j < board.GetLength(1); j++)
-    {
-        Console.Write(board[i,j] + "\t");
-    }
-    Console.WriteLine();
-}
-
-    int a = 0;
-
-    Console.WriteLine("Введите второе число для замены:");
-    int b = Convert.ToInt32(Console.ReadLine());
-
-    bebra(board, a, b);
-
-    Console.WriteLine("\nПродолжаем");
-}
-void CheckWin(int[,] board)
-{
-
-}
-void bebra(int[,] board, int hog,int sergey) 
-{
-    int anya = find(board,hog);
-    int kolya=find(board,sergey);
-    board[anya % 1000, anya / 1000] = sergey;
-    board[kolya%1000,kolya/1000] = hog;
-
-}
-
-int  find(int[,] niggs, int slon) 
-{
-    int min = 0;
-    for(int i=0; i < 4; i++)
-    {
-        for(int j=0; j< 4; j++)
+        for (int j = 0; j < nums.GetLength(1); j++)
         {
-            if (niggs[i,j] == slon) 
+            Console.Write(nums[i, j] + "\t");
+        }
+        Console.WriteLine();
+    }
+
+    int num = 1;
+    bool win = true; 
+
+    for (int i = 0; i < w; i++)
+    {
+        for (int j = 0; j < h; j++)
+        {
+            if (nums[i, j] != num)
             {
-                min = i + j * 1000;
+                win = false; break;
+            }
+            num++;
+        }
+        if (!win)
+            break;
+    }  
+    if (win)
+    {
+        Console.WriteLine("WINNER!!!");
+        gameOver = true;
+        break;
+    }
+
+    int a = 0; Console.WriteLine("Выберите число для заменки");
+    int b = Convert.ToInt32(Console.ReadLine());
+    int line3 = -1, tab3 = -1;
+    int line4 = -1, tab4 = -1; for (int i = 0; i < nums.GetLength(0); i++)
+    {
+        for (int j = 0; j < nums.GetLength(1); j++)
+        {
+            if (nums[i, j] == a)
+            {
+                line3 = i;
+                tab3 = j;
+            }
+            if (nums[i, j] == b)
+            {
+                line4 = i; tab4 = j;
             }
         }
+    }   
+
+    if (Math.Abs(line3 - line4) + Math.Abs(tab3 - tab4) == 1)
+    {
+        int temp = nums[line3, tab3];
+        nums[line3, tab3] = nums[line4, tab4]; nums[line4, tab4] = temp;
     }
-    return min;
+    else
+    {
+        Console.WriteLine("Так нельзя");
+    }
+
 }
