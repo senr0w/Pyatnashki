@@ -1,0 +1,15 @@
+C:\Users\User\source\repos\Pyatnashki\Pyatnashki\bin\Debug\net6.0\Pyatnashki.exe
+C:\Users\User\source\repos\Pyatnashki\Pyatnashki\bin\Debug\net6.0\Pyatnashki.deps.json
+C:\Users\User\source\repos\Pyatnashki\Pyatnashki\bin\Debug\net6.0\Pyatnashki.runtimeconfig.json
+C:\Users\User\source\repos\Pyatnashki\Pyatnashki\bin\Debug\net6.0\Pyatnashki.dll
+C:\Users\User\source\repos\Pyatnashki\Pyatnashki\bin\Debug\net6.0\Pyatnashki.pdb
+C:\Users\User\source\repos\Pyatnashki\Pyatnashki\obj\Debug\net6.0\Pyatnashki.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\Pyatnashki\Pyatnashki\obj\Debug\net6.0\Pyatnashki.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\Pyatnashki\Pyatnashki\obj\Debug\net6.0\Pyatnashki.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\Pyatnashki\Pyatnashki\obj\Debug\net6.0\Pyatnashki.AssemblyInfo.cs
+C:\Users\User\source\repos\Pyatnashki\Pyatnashki\obj\Debug\net6.0\Pyatnashki.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Pyatnashki\Pyatnashki\obj\Debug\net6.0\Pyatnashki.dll
+C:\Users\User\source\repos\Pyatnashki\Pyatnashki\obj\Debug\net6.0\refint\Pyatnashki.dll
+C:\Users\User\source\repos\Pyatnashki\Pyatnashki\obj\Debug\net6.0\Pyatnashki.pdb
+C:\Users\User\source\repos\Pyatnashki\Pyatnashki\obj\Debug\net6.0\Pyatnashki.genruntimeconfig.cache
+C:\Users\User\source\repos\Pyatnashki\Pyatnashki\obj\Debug\net6.0\ref\Pyatnashki.dll
